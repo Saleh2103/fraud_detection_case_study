@@ -12,6 +12,8 @@ from sklearn.linear_model import LogisticRegression
 # Initialize colorama
 init()
 
+
+# noinspection PyPep8Naming
 class SMOTEHelper:
     @staticmethod
     def apply_smote(X, y):
@@ -86,8 +88,15 @@ class RandomForestModel:
         print(classification_report(self.y_test, predictions))
         print(Style.RESET_ALL + "")
 
+
+# noinspection PyPep8Naming
 class GatedRecurrentUnitModel:
     def __init__(self, dataset):
+        self.X_numerical_test = None
+        self.X_customer_test = None
+        self.X_merchant_test = None
+        self.y_test = None
+        self.history = None
         self.dataset = dataset
         self.numerical_features = self.dataset.drop(columns=['fraud'])
         self.target_labels = self.dataset['fraud'].values
