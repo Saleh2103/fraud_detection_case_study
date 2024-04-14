@@ -127,11 +127,6 @@ class DatasetCleaning:
     
     @staticmethod
     def clean(dataset):
-        # Clean columns from the quotation
-        dataset[['customer','age','gender','merchant','category']] = dataset[['customer','age','gender','merchant','category']].map(lambda x: x.replace("'", ""))
-        print(Fore.CYAN + 'single quotations in columns have been cleaned')
-        print(Style.RESET_ALL + "")
-
         # Drop zipcodeOri and zipMerchant columns as they have one unique value
         dataset = dataset.drop(columns=['zipcodeOri', 'zipMerchant'])
         print(Fore.CYAN + 'zipcodeOri and zipMerchant have been dropped from the dataset')
