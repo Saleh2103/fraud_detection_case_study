@@ -3,7 +3,7 @@ import preprocessing
 import models
 
 # Reading the dataset
-dataset = pd.read_csv('fraud.csv')
+dataset = pd.read_csv('fraud.csv', quotechar="'")
 
 cleaning = preprocessing.DatasetCleaning()
 # Cleaning the dataset
