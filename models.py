@@ -66,6 +66,14 @@ class GradientBoostingModel:
         print(Fore.BLUE + "Gradient Boosting Model Accuracy:", accuracy)
         # Reset the color
         print(Style.RESET_ALL + "")
+        # Confusion Matrix
+        print(Fore.YELLOW + "Gradient Boosting Model Confusion Matrix:")
+        print(confusion_matrix(self.y_test, y_pred))
+        print(Style.RESET_ALL)
+        # Classification Report
+        print(Fore.GREEN + "Gradient Boosting Model Classification Report:")
+        print(classification_report(self.y_test, y_pred))
+        print(Style.RESET_ALL)
 
 class RandomForestModel:
     def __init__(self, dataset, smote_applied=False):
